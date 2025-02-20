@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nayak Budokan Karate academy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="nb.png" alt="Karate Logo" class="logo">
+      <h1 class="school-title">NAYAK BUDOKAN KARATE ACADEMY</h1>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-link" aria-current="page">Home</a>
+      <a href="/about.html" class="nav-link">About NBKA</a>
+      <a href="/branches.html" class="nav-link">branchs</a>
+      <a href="/news.html" class="nav-link">News</a>
+      <a href="/members.html" class="nav-link">members</a>
+      <a href="/black belts.html" class="nav-link">black belt</a>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <ul class="breadcrumb-list">
+      <li class="breadcrumb-item">home</li>
+    </ul>
+  </div>
+
+  <section class="section">
+    <h1 class="section-title">
+      <p style="color: aliceblue;">Welcome to Nayak Budokan Karate academy</p>
+    </h1>
+    <div class="card">
+      <p>Discover the art of traditional karate in a modern setting. Join us on a journey of self-discovery,
+        discipline, and excellence.</p>
+      <a href="/about.html" class="button button-primary">Learn More</a>
+    </div>
+  </section>
+
+
+  <div class="container">
+    <form method="post"
+      action="https://script.google.com/macros/s/AKfycbw3rAbbQx-ycAL78xAgtliNNU28J8ozwGIj_OK9oYpNApqLxbgTVSliazzAnvZ-uiKY/exec"
+      name="contact-form">
+      <h2>JOIN</h2>
+      <input type="text" name="NAME" placeholder="NAME">
+      <input type="text" name="FATHER" placeholder="FATHER NAME">
+      <input type="text" name="PHONE" placeholder="Pho-NUMBER">
+      <input type="email" name="EMAIL" placeholder="Email">
+      <input type="text" name="BRANCH" placeholder="BRANCH OR ADDRESS">
+
+      <textarea name="MESSAGE" rows="7" placeholder="MSG FOR ANY INFORMATION">
+        </textarea>
+      <div class="container">
+        <input type="submit" value="Submit" id="submit">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw3rAbbQx-ycAL78xAgtliNNU28J8ozwGIj_OK9oYpNApqLxbgTVSliazzAnvZ-uiKY/exec'
+    const form = document.forms['contact-form']
+
+    form.addEventListener('submit', e => {
+
+      e.preventDefault()
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => alert("Thank you! Form is submitted"))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+  </script>
+
+  <section class="master-quote">
+    <img src="nb.png" alt="Master Chen" class="master-img">
+    <blockquote class="quote">
+      "The journey of martial arts is not just about physical strength, but about developing inner peace and
+      discipline."
+    </blockquote>
+    <p><strong>-S.HEMANTH KUMAR-</strong></p>
+  </section>
+
+</body>
+
+</html>

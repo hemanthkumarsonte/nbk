@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Drinks Sales Tracker</title>
+    <link rel="stylesheet" href="item.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> SEALS Tracker</h1>
+            <p id="current-date"></p>
+        </header>
+
+        <!-- Sales Summary -->
+        <div class="summary-card">
+            <h2>Today's Sales Summary</h2>
+            <div class="summary-stats">
+                <div class="stat">
+                    <span class="stat-label">Total Earnings</span>
+                    <span class="stat-value" id="total-earnings">₹0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Total Drinks Sold</span>
+                    <span class="stat-value" id="total-drinks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Average per Drink</span>
+                    <span class="stat-value" id="average-price">₹0</span>
+                </div>
+                 <div class="stat">
+                    <span class="stat-label">Total UPI Earnings</span>
+                    <span class="stat-value" id="total-upi">₹0</span>
+                </div>
+            </div>
+            <button class="reset-btn" onclick="resetSales()">Reset Today's Sales</button>
+        </div>
+
+        <!-- Drinks Grid -->
+        <div class="drinks-grid">
+            <div class="drink-card" data-id="1">
+                <img src="https://www.thespruceeats.com/thmb/aXBZePco3iakbaZyPC4LamgwVEI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-badam-milk-with-cardamom-1957418-f94ebb8b20b9421ba4688cd7570d36e0.jpg" alt="Badam milk ">
+                <h3>BADAM MILK  </h3>
+                <div class="price">₹50</div>
+                <div class="sales-info">
+                    <div>Sold Today: <span class="sold-count">0</span></div>
+                    <div>Earned: <span class="earned-amount">₹0</span></div>
+                    <p><span class="upi-amount">UPI: ₹0</span></p>
+                </div>
+                <button class="sell-btn" onclick="sellDrink(1, 'badam milk', 50)">CASH</button>
+                <button class="sell-btn" onclick="sellDrinkUPI(1, 'badam milk', 50)">Sell (UPI)</button>
+            </div>
+                
+
+            <div class="drink-card" data-id="2">
+                <img src="https://static.wixstatic.com/media/4aff5c_27e8cea2d6174d17b201130f0f3abc8f~mv2.png/v1/fill/w_1000,h_1000,al_c,q_90,usm_0.66_1.00_0.01/4aff5c_27e8cea2d6174d17b201130f0f3abc8f~mv2.png" alt="Pepsi">
+                <h3>BUTTER MILK</h3>
+                <div class="price">₹30</div>
+                <div class="sales-info">
+                    <div>Sold Today: <span class="sold-count">0</span></div>
+                    <div>Earned: <span class="earned-amount">₹0</span></div>
+                    <p><span class="upi-amount">UPI: ₹0</span></p>
+                </div>
+                <button class="sell-btn" onclick="sellDrink(2, 'Pepsi', 30)">SELL ONE</button>
+                <button class="sell-btn" onclick="sellDrinkUPI(2, 'Pepsi', 30)">Sell (UPI)</button>
+            </div>
+
+            <div class="drink-card" data-id="3">
+                <img src="https://www.indianveggiedelight.com/wp-content/uploads/2023/01/sweet-lassi-recipe-1.jpg" alt="lassi">
+                <h3>SWEET LASSI </h3>
+                <div class="price">₹30</div>
+                <div class="sales-info">
+                    <div>Sold Today: <span class="sold-count">0</span></div>
+                    <div>Earned: <span class="earned-amount">₹0</span></div>
+                    <p><span class="upi-amount">UPI: ₹0</span></p>
+                </div>
+                <button class="sell-btn" onclick="sellDrink(3, 'lassi', 30)">SELL ONE</button>
+                <button class="sell-btn" onclick="sellDrinkUPI(3, 'badam milk', 30)">Sell (UPI)</button>
+            </div>
+
+            <div class="drink-card" data-id="4">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.fDRUA3TTWZk715DkoyWPqQHaEo?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Orange Juice">
+                <h3>SAMOSA</h3>
+                <div class="price">₹40</div>
+                <div class="sales-info">
+                    <div>Sold Today: <span class="sold-count">0</span></div>
+                    <div>Earned: <span class="earned-amount">₹0</span></div>
+                    <p><span class="upi-amount">UPI: ₹0</span></p>
+                </div>
+                <button class="sell-btn" onclick="sellDrink(4, 'samosa', 40)">SELL ONE</button>
+                <button class="sell-btn" onclick="sellDrinkUPI(4, 'badam milk', 40)">Sell (UPI)</button>
+            </div>
+
+            <div class="drink-card" data-id="5">
+                <img src="https://images.pexels.com/photos/327090/pexels-photo-327090.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Water Bottle">
+                <h3>Water Bottle</h3>
+                <div class="price">₹20</div>
+                <div class="sales-info">
+                    <div>Sold Today: <span class="sold-count">0</span></div>
+                    <div>Earned: <span class="earned-amount">₹0</span></div>
+                    <p><span class="upi-amount">UPI: ₹0</span></p>
+                </div>
+                <button class="sell-btn" onclick="sellDrink(5, 'Water Bottle', 20)">SELL ONE</button>
+                <button class="sell-btn" onclick="sellDrinkUPI(5, 'water Bottle', 20)">Sell (UPI)</button>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ol>
+                <li>When a customer buys a drink, tap the "SELL ONE" button for that drink</li>
+                <li>The system automatically calculates your earnings and tracks quantities</li>
+                <li>View your daily summary at the top to see total earnings and drinks sold</li>
+                <li>Data is saved automatically and resets each new day</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="item.js"></script>
+</body>
+</html>
